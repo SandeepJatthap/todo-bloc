@@ -39,7 +39,6 @@ class EditTodoPage extends StatelessWidget {
 class EditTodoView extends StatelessWidget {
   EditTodoView({super.key});
 
-  final TextEditingController titleController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -152,7 +151,7 @@ class EditTodoView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppTextField(
-                  controller: titleController,
+                  initialValue: todo?.taskName ?? "",
                   // readOnly: controller.todo!=null,
                   hint: "Title",
                   minLines: 4,
